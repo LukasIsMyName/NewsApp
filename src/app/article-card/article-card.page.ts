@@ -16,4 +16,8 @@ export class ArticleCardPage implements OnInit {
     this.articleContent = navigation?.extras.state?.['data'];
   }
 
+  goBack(){
+    this.router.navigate(['/main']);
+  }
+
 }
