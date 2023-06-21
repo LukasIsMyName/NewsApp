@@ -17,9 +17,9 @@ export class MainPage implements OnInit {
   ngOnInit() {
     this.feedCards = this.api.getFeed();
     this.feedCards.subscribe(
-      (films: any) => 
+      (articles: any) => 
       {
-		    this.articles = films.articles;
+		    this.articles = articles.articles;
 		  },
 		  error => 
       {
