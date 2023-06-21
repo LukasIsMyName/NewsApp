@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">{{articleContent.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+      <img [src]="articleContent.urlToImage">
+      {{articleContent.description}}
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content style="display: flex; justify-content: center; align-items: center;">
+      <ion-button class="" href="{{articleContent.url}}" target="_blank">read full article here</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
