@@ -3,3 +3,13 @@
     bottom: 0;
     width: 100%;
   }
+
+  .background-effect{
+    position: fixed;
+    display: block;
+    background-color: rgb(82, 30, 223);
+    width:100%;
+    height: 50vh;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+}

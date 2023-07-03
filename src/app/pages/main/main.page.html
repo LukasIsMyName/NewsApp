@@ -1,11 +1,27 @@
+<!-- Author: Lukas Sumkauskas-->
+<!-- ID: SBA22472 -->
+<!-- Date: June 2023 -->
+
+<!-- Program: News App using Angular, Ionic framework, that -->
+<!-- utilizes API calls to retrieve content for news articles,  -->
+<!-- ionic components for UI.-->
+
+<!-- Estimated time: 12 hours -->
+<!-- Time taken: 18 hours -->
+<!-- Known Bugs: None -->
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="ion-text-center"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFAklEQVR4nNVXa2xURRRuVJAf/jDRnyKUVxAxVQoB/bOEdu/ex8ydmdu9XfoCassWKUEEY4uChWYFmvKwEkMh0bbbghZfSI1ChRQTAwYS+uIhUKpou33AonS7PNruHjMXdumSkt1lgcRJvpy9M3PO982ZMzPZuLj/azNLVGIMnWYMneG/HxtxskhNKkWNmfPFfwvyTMCxIM3ioRQ1WRQyd/hcGROvIDPgkBVyLSZis6zOJkw5Ol8XPQe2TvZfqZkAG5cmG+itmgwHtk6G9FSLlzHlt2SRzeE+nPjq7nEwdOgpQ8QDEQsKS6AUH9I02fN96RR/rzMe6otfhyUZ4pCuIVcKQx15GeIQ7+uumAT7S6f4rSmSlzHUwEld5QnQv++56AUISJtKCKpjTPF+XTLV11M9Hhocs2FZlsWXypBbQsRWVFT0BIdFpqkaRb18rMExB7qrJsBXm17y6ymyb+3iZDhROgvqHK+1REScpGgTVIJqCcH9uz+aNtjtjIfO8gQ4vGHmgJWhPkVR39R1/cl7/XifBZNFGsX/rMo2D/26cTZ0VU2EPY6XQU9BsNo+9zKPfV9iUWQvEIIqVRVfr1g/fbC7ZhwcL50JhTlm/7KF5kuwd9poIzMSWyBIbG9ion1USMZk8oZZYdN5vyyTpYRgD/c9XjoLXM54qCp+xUcIvsEIqhYEMjaEXKW4FKuqt3zNqzc7nOOhcWsifGhP8lOKb1BVLTSZFo4ZttLRZpl9J0j024AIQaF2s0S7BIUmBuZxH0xIASGqd609yde4eSb8VTERdq5JGMAYX2dM2TJMPYNLzrFwatsMcCxJ8hOCb1GqFptM+jMjZYuLECT6iwVZb0pY7xMk1i4IeNJIc3kMjMk6QtQbPHbrthnwZ9X40KIUZAYl+fOAqOqATZO3mQh5Ni5MQ9Tm2bTlY6jdVwcKtbnDzecxGUWbVazeKsmf5w8RQIjabWXKDhNCz8uyNo6lZp6yKJovcInEChGl+Gzpi1qTkf4i5+BcnHNEpZz87XcL4JMd5bD/YD00/X5+RDSfb4O2DhdcdHXdF+2dXdDhdoPLfRV2Ve4GW0Z2+KNoUTQfJ5dYWswrt2bZofncBUNE5xW3kYmwAgSZwfadu4wApOYPsP10+YGx/miPka2VBWug51pfZLehMIIAR0t/xFjX6IHchquGH8nMMwRc7HQ9PgGOln4oavQYfjxGzBkQbTnw/uGLQLKWGMFla+btsTvf99oFRWWA0nLAWns2KODBM1DdbljtrULDcgJu87Z/Cavrzwa/lzt/Do7j9FzI3rATbHWdQQHvFHwQvQDJlgtqRZvhpNoLQgTklHwWIkBQtOD48sqDoOWuALqpNiig6dwFuNTTy4+hN2IBmTVnQP70NEhpeaB/cRrktFyDQLFmhWwBzlgMK785ZtjAFiipCyHFefKugDtoPHtuXVQZEMtagTjvHkVe3YUn+qC4OXwhDi/CAKie4Y6qBsSy1tsiqtvB9mNv1PfAvQKiLkLxjgAOvh24os04GXRPZOAxfqg/BPb8FYaNSIAlcBXT9JivYh6DL4ajbEc58NhhBVA9o3X5qkLjMQo4xwoeiz9wLDWzOawA+fZz3PIwn2MeS7NlNfHnOC6aJsgMFue/FxMi2nemKb0Pa7WRAhP8d1DArWOjjvB/L4NHRsHAydEw2PT0I8dA85jPgwI0Tb78uDPAOaOqh0fV/gNPURiUl0b2lwAAAABJRU5ErkJggg=="></ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
+  <div class="time-bar">
+    <ion-title><ion-icon name='time'></ion-icon> {{ currentTime }}</ion-title></div>
+  <div class="background-effect"></div>
+  <div class="aesthetic-shape"></div>
   <ion-grid>
-    <ion-row>
+    <ion-row> 
+      <!-- For loop(*ngFor) to populate the ion content -->
       <ion-col size="12" *ngFor="let article of articles">
         <ion-card (click)="openArticle(article)">
           <ion-card-header>
